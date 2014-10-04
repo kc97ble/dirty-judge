@@ -42,7 +42,7 @@
         <UnitName Value="dirty_judge"/>
       </Unit0>
       <Unit1>
-        <Filename Value="main_form.pas"/>
+        <Filename Value="component/main_form.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
