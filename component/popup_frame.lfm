@@ -1,0 +1,91 @@
+object Frame1: TFrame1
+  Left = 0
+  Height = 106
+  Top = 0
+  Width = 320
+  ChildSizing.TopBottomSpacing = 5
+  ChildSizing.VerticalSpacing = 5
+  ClientHeight = 106
+  ClientWidth = 320
+  TabOrder = 0
+  Visible = False
+  DesignLeft = 958
+  DesignTop = 664
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 96
+    Top = 5
+    Width = 320
+    Align = alClient
+    Caption = 'Lưu, mở file có sẵn'
+    ChildSizing.TopBottomSpacing = 5
+    ChildSizing.VerticalSpacing = 5
+    ClientHeight = 76
+    ClientWidth = 316
+    TabOrder = 0
+    object Panel1: TPanel
+      Left = 0
+      Height = 32
+      Top = 39
+      Width = 316
+      Align = alBottom
+      ChildSizing.LeftRightSpacing = 5
+      ChildSizing.HorizontalSpacing = 5
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsHomogenousChildResize
+      ChildSizing.ShrinkVertical = crsHomogenousChildResize
+      ChildSizing.Layout = cclTopToBottomThenLeftToRight
+      ClientHeight = 32
+      ClientWidth = 316
+      TabOrder = 0
+      object SaveBtn: TButton
+        Left = 5
+        Height = 32
+        Top = 0
+        Width = 71
+        Caption = 'Lưu'
+        OnClick = SaveBtnClick
+        TabOrder = 0
+      end
+      object DeleteBtn: TButton
+        Left = 81
+        Height = 32
+        Top = 0
+        Width = 72
+        Caption = 'Xoá'
+        OnClick = DeleteBtnClick
+        TabOrder = 1
+      end
+      object LoadBtn: TButton
+        Left = 158
+        Height = 32
+        Top = 0
+        Width = 68
+        Caption = 'Mở'
+        OnClick = LoadBtnClick
+        TabOrder = 2
+      end
+      object Button1: TButton
+        Left = 231
+        Height = 32
+        Top = 0
+        Width = 80
+        Caption = 'Đóng'
+        OnClick = Button1Click
+        TabOrder = 3
+      end
+    end
+    object FileEdit: TComboBox
+      Left = 0
+      Height = 29
+      Top = 5
+      Width = 316
+      Align = alClient
+      ItemHeight = 0
+      OnChange = FileEditChange
+      TabOrder = 1
+      Text = 'FileEdit'
+    end
+  end
+end

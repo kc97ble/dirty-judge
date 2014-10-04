@@ -1,0 +1,73 @@
+unit algorithm;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+  TCompare = function (x, y: Integer): Boolean of object;
+  TArrayInt = array of Integer;
+
+procedure CreateIndexList(var List: TArrayInt; Count: Integer);
+procedure Sort(a: array of Integer; cmp: TCompare);
+procedure Swap(var x, y: Integer);
+procedure ApplyPermutation(List: TStrings; const Index: array of Integer);
+
+implementation
+
+procedure CreateIndexList(var List: TArrayInt; Count: Integer);
+var
+  i: Integer;
+begin
+  SetLength(List, Count);
+  for i := 0 to Count-1 do
+  List[i] := i;
+end;
+
+procedure Sort(a: array of Integer; cmp: TCompare);
+var
+  i, j: Integer;
+begin
+  for i := 0 to Length(a)-1 do
+  for j := i+1 to Length(a)-1 do
+  if cmp(a[j], a[i]) then
+  Swap(a[i], a[j]);
+end;
+
+procedure Swap(var x, y: Integer);
+var
+  z: Integer;
+begin
+  z := x;
+  x := y;
+  y := z;
+end;
+
+procedure ApplyPermutation(List: TStrings; const Index: array of Integer);
+var
+  Ignore: array of Boolean;
+  i, j: Integer;
+begin
+  SetLength(Ignore, Length(Index));
+  try
+    for i := 0 to Length(Index)-1 do
+    if not Ignore[i] then
+    begin
+      j := i;
+      while i<>Index[j] do
+      begin
+        Ignore[j] := True;
+        List.Exchange(j, Index[j]);
+        j := Index[j];
+      end;
+      Ignore[j] := True;
+    end;
+    finally SetLength(Ignore, 0);
+  end;
+end;
+
+end.
+

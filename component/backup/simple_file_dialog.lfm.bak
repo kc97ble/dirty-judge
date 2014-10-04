@@ -1,0 +1,79 @@
+object SimpleFileDialog: TSimpleFileDialog
+  Left = 958
+  Height = 240
+  Top = 530
+  Width = 320
+  Caption = 'SimpleFileDialog'
+  ChildSizing.TopBottomSpacing = 5
+  ChildSizing.VerticalSpacing = 5
+  ClientHeight = 240
+  ClientWidth = 320
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.2.0.3'
+  object ListBox1: TListBox
+    Left = 0
+    Height = 160
+    Top = 5
+    Width = 320
+    Align = alClient
+    ItemHeight = 0
+    OnDblClick = ListBox1DblClick
+    OnSelectionChange = ListBox1SelectionChange
+    ScrollWidth = 318
+    TabOrder = 0
+    TopIndex = -1
+  end
+  object Edit1: TEdit
+    Left = 0
+    Height = 28
+    Top = 170
+    Width = 320
+    Align = alBottom
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 32
+    Top = 203
+    Width = 320
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 32
+    ClientWidth = 320
+    TabOrder = 2
+    object Button1: TButton
+      Left = 245
+      Height = 32
+      Top = 0
+      Width = 75
+      Align = alRight
+      Caption = 'Mở'
+      ModalResult = 1
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 0
+      Height = 32
+      Top = 0
+      Width = 75
+      Align = alLeft
+      Caption = 'Lưu'
+      ModalResult = 1
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 170
+      Height = 32
+      Top = 0
+      Width = 75
+      Align = alRight
+      Caption = 'Huỷ'
+      ModalResult = 2
+      TabOrder = 2
+    end
+  end
+end
